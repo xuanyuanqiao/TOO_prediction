@@ -103,9 +103,10 @@ for key in targets:
         classes.remove(value)
         break
 
+
 mtx = feat_mtx.copy()
 mtx['Target'] = CancerType
-mtx = mtx.replace(target_dict)
+mtx = mtx.replace(target_dict) ## mtx["Target"] = mtx["Target"].map(target_dict)
 
 ## L1-based feature selection
 x = np.array(feat_mtx)
